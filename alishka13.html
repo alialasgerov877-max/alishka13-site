@@ -1,0 +1,409 @@
+<!doctype html>
+
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ALİSHKA 13 — Avtomobil Kirayəsi</title>
+  <meta name="description" content="ALİSHKA 13 — Premium avtomobil kirayışı. Azərbaycanda, Rusiyada və Türkiyədə xidmət. Rahat rezervasiya, şəffaf qiymətlər və sürətli müştəri dəstəyi.">
+  <meta name="theme-color" content="#0b1221">
+  <!-- Open Graph -->
+  <meta property="og:title" content="ALİSHKA 13 — Avtomobil Kirayəsi">
+  <meta property="og:description" content="Premium avtomobil kirayışı — sadə, sürətli və etibarlı.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="az_AZ">  <!-- Structured data (LocalBusiness) -->  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ALİSHKA 13",
+    "image": "logo.svg",
+    "description": "Premium avtomobil kirayəsi xidmətləri",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Baku",
+      "addressCountry": "AZ"
+    },
+    "telephone": "+994000000000",
+    "url": "https://example.com"
+  }
+  </script>  <style>
+    /* Simple premium stylesheet (self-contained) */
+    :root{
+      --bg:#0b1221; --card:#0f1724; --accent:#eab308; --muted:#94a3b8; --glass: rgba(255,255,255,0.04);
+      --radius:14px; --max-width:1200px;
+      --font-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:var(--font-sans); background:linear-gradient(180deg,#061026 0%, #071226 60%); color:#e6eef8;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; padding:24px;
+    }
+    .container{max-width:var(--max-width); margin:0 auto}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;background:transparent}
+    /* Logo */
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo svg{width:56px;height:56px}
+    .site-name{font-weight:700;letter-spacing:0.6px}
+    nav{display:flex;gap:14px;align-items:center}
+    a.btn{background:linear-gradient(90deg,var(--accent),#f59e0b);color:#041022;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none}
+    a.ghost{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:18px}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border-radius:var(--radius); padding:28px; box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+    .kicker{color:var(--accent);font-weight:700;margin-bottom:8px}
+    h1{margin:6px 0 12px;font-size:28px}
+    p.lead{color:var(--muted);line-height:1.5}
+
+    /* Search / booking */
+    .booking{background:var(--card); padding:16px;border-radius:12px}
+    .form-row{display:flex;gap:8px;margin-bottom:10px}
+    input,select{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    button.primary{background:var(--accent);border:none;padding:12px;border-radius:10px;font-weight:700;color:#01101b;cursor:pointer}
+
+    /* Cars grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;margin-top:20px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:14px;border-radius:12px}
+    .car-img{width:100%;height:130px;border-radius:10px;background:linear-gradient(180deg,#0b1530,#081026);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
+    .car-meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+
+    footer{margin-top:28px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);padding:16px;border-radius:12px}
+
+    /* Responsive */
+    @media (max-width:900px){ .hero{grid-template-columns:1fr;}
+      .hero-card{order:2}
+    }
+    /* Tiny accessibility helpers */
+    .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+
+    /* small modal */\    
+    .modal-backdrop{position:fixed;left:0;top:0;width:100%;height:100%;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:60}
+    .modal{background:linear-gradient(180deg,#081026,#071226);padding:18px;border-radius:14px;max-width:520px;width:92%}
+    .close{background:transparent;border:0;color:var(--muted);cursor:pointer}
+
+    /* cookie consent */
+    .cookie{position:fixed;right:18px;bottom:18px;background:var(--card);padding:12px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.5)}
+  </style></head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo" role="img" aria-label="ALIS HKA 13 logo">
+        <!-- Inline SVG logo (editable) -->
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0" stop-color="#fbbf24"/>
+              <stop offset="1" stop-color="#f59e0b"/>
+            </linearGradient>
+          </defs>
+          <rect x="8" y="8" width="184" height="184" rx="34" fill="#041022"/>
+          <path d="M40 140 L80 60 L120 140 Z" fill="url(#g1)" opacity="0.95"/>
+          <text x="100" y="165" font-family="Arial" font-size="22" text-anchor="middle" fill="#e6eef8">ALİSHKA 13</text>
+        </svg>
+        <div>
+          <div class="site-name">ALİSHKA 13</div>
+          <div style="font-size:12px;color:var(--muted)">Premium Car Rental</div>
+        </div>
+      </div>
+      <nav>
+        <a class="ghost" href="#cars" data-i18n="nav_cars">Avtomobillər</a>
+        <a class="ghost" href="#about" data-i18n="nav_about">Haqqımızda</a>
+        <a class="ghost" href="#contact" data-i18n="nav_contact">Əlaqə</a>
+        <select id="lang" aria-label="language switcher" title="Language">
+          <option value="az">AZ</option>
+          <option value="ru">RU</option>
+          <option value="tr">TR</option>
+        </select>
+        <a class="btn" id="bookNowBtn" href="#" data-i18n="nav_book">Rezervasiya et</a>
+      </nav>
+    </header><main>
+  <section class="hero">
+    <div class="hero-card">
+      <div class="kicker" data-i18n="hero_kicker">Sürətli • Etibarlı • Premium</div>
+      <h1 data-i18n="hero_title">ALİSHKA 13 ilə yola çıxın — rahat və təhlükəsiz avtomobil kirayəsi</h1>
+      <p class="lead" data-i18n="hero_text">Şəffaf qiymətlər, yeni modellər, 24/7 dəstək və asan onlayn rezervasiya. Azərbaycanda, Rusiyada və Türkiyədə xidmətinizdəyik.</p>
+
+      <div style="margin-top:18px;" class="booking" aria-label="Rezervasiya formu">
+        <form id="searchForm">
+          <div class="form-row">
+            <select name="pickup" id="pickup" required>
+              <option value="Baku">Baku</option>
+              <option value="Ganja">Ganja</option>
+              <option value="Sumqayit">Sumqayit</option>
+            </select>
+            <input type="date" id="pickupDate" required>
+          </div>
+          <div class="form-row">
+            <select name="dropoff" id="dropoff" required>
+              <option value="Baku">Baku</option>
+              <option value="Ganja">Ganja</option>
+            </select>
+            <input type="date" id="dropoffDate" required>
+          </div>
+          <div class="form-row">
+            <select id="carType">
+              <option value="economy">Economy</option>
+              <option value="suv">SUV</option>
+              <option value="lux">Luxury</option>
+            </select>
+            <button class="primary" type="submit" data-i18n="search_btn">Axtar</button>
+          </div>
+        </form>
+        <div style="font-size:13px;color:var(--muted);margin-top:8px" id="searchHint">25+ yeni avtomobil, sığorta və 24/7 yol yardımı daxil.</div>
+      </div>
+
+    </div>
+
+    <aside class="hero-card">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="font-weight:700">Xüsusi Təklif</div>
+        <div style="font-size:13px;color:var(--muted)">Yeni müştərilər üçün ilk gün 20% endirim. Promokodu "WELCOME13" daxil edin.</div>
+        <div style="margin-top:12px">
+          <div style="font-weight:700">Sürətli Rezervasiya</div>
+          <ul style="color:var(--muted);margin:6px 0 0 18px">
+            <li data-i18n="feat_1">Sığorta daxil</li>
+            <li data-i18n="feat_2">Limitsiz kilometr seçimi</li>
+            <li data-i18n="feat_3">24/7 dəstək</li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <section id="cars">
+    <h2 style="margin-top:20px">Avtomobil Kataloqu</h2>
+    <div class="grid" id="carsGrid" aria-live="polite">
+      <!-- JS will populate cars -->
+    </div>
+  </section>
+
+  <section id="about" style="margin-top:22px;">
+    <div class="hero-card">
+      <h3 data-i18n="about_title">Biz kimik?</h3>
+      <p data-i18n="about_text">ALİSHKA 13 — yüksək xidmət standartları ilə qurulmuş premium avtomobil kirayəsi şirkətidir. Bütün avtomobillərimiz müntəzəm texniki baxımdan keçir və tam sığortalıdır.</p>
+    </div>
+  </section>
+
+  <section id="contact" style="margin-top:22px;display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start">
+    <div class="hero-card">
+      <h3 data-i18n="contact_title">Bizimlə əlaqə</h3>
+      <form id="contactForm">
+        <div class="form-row"><input type="text" id="cname" placeholder="Ad" required></div>
+        <div class="form-row"><input type="email" id="cemail" placeholder="E-poçt" required></div>
+        <div class="form-row"><input type="tel" id="cphone" placeholder="Telefon" required></div>
+        <div class="form-row"><textarea id="cmessage" rows="4" placeholder="Mesajınız" style="flex:1;padding:10px;border-radius:10px;background:transparent;color:inherit;border:1px solid rgba(255,255,255,0.04)"></textarea></div>
+        <div class="form-row"><button type="submit" class="primary" data-i18n="contact_send">Göndər</button></div>
+      </form>
+    </div>
+
+    <div class="hero-card">
+      <h4>Ofis</h4>
+      <div style="color:var(--muted);font-size:13px">Baku, Azerbaijan<br>Telefon: +994 50 000 00 00<br>Email: info@alishka13.example</div>
+      <div style="margin-top:12px">
+        <strong>İş saatları</strong>
+        <div style="color:var(--muted);font-size:13px">Hər gün: 08:00 — 22:00</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div>© <span id="year"></span> ALİSHKA 13 — Bütün hüquqlar qorunur</div>
+  <div style="display:flex;gap:12px;align-items:center">
+    <div style="color:var(--muted);font-size:13px">Dil:</div>
+    <select id="footerLang" aria-label="footer-language">
+      <option value="az">AZ</option>
+      <option value="ru">RU</option>
+      <option value="tr">TR</option>
+    </select>
+  </div>
+</footer>
+
+<!-- modal for booking -->
+<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal" role="document">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div style="font-weight:700" id="modalTitle">Rezervasiya</div>
+      <button class="close" id="modalClose" aria-label="close">✕</button>
+    </div>
+    <div style="margin-top:12px" id="modalBody">
+      <!-- form populated by JS -->
+    </div>
+  </div>
+</div>
+
+<div class="cookie" id="cookieBox" role="region" aria-label="cookie-consent">
+  <div style="font-weight:700">Cookie</div>
+  <div style="font-size:13px;color:var(--muted)">Bu sayt istifadəçi təcrübəsini yaxşılaşdırmaq üçün cookie-lərdən istifadə edir.</div>
+  <div style="margin-top:8px;display:flex;gap:8px"><button class="primary" id="acceptCookie">Qəbul et</button><button class="close" id="declineCookie">Rədd et</button></div>
+</div>
+
+  </div>  <script>
+    // --- Basic data & translations ---
+    const translations = {
+      az: {
+        nav_cars: 'Avtomobillər', nav_about: 'Haqqımızda', nav_contact: 'Əlaqə', nav_book: 'Rezervasiya et',
+        hero_kicker:'Sürətli • Etibarlı • Premium', hero_title:'ALİSHKA 13 ilə yola çıxın — rahat və təhlükəsiz avtomobil kirayəsi',
+        hero_text:'Şəffaf qiymətlər, yeni modellər, 24/7 dəstək və asan onlayn rezervasiya. Azərbaycanda, Rusiyada və Türkiyədə xidmətinizdəyik.',
+        search_btn:'Axtar', feat_1:'Sığorta daxil', feat_2:'Limitsiz kilometr seçimi', feat_3:'24/7 dəstək',
+        about_title:'Biz kimik?', about_text:'ALİSHKA 13 — yüksək xidmət standartları ilə qurulmuş premium avtomobil kirayəsi şirkətidir. Bütün avtomobillərimiz müntəzəm texniki baxımdan keçir və tam sığortalıdır.',
+        contact_title:'Bizimlə əlaqə', contact_send:'Göndər'
+      },
+      ru: {
+        nav_cars:'Автомобили', nav_about:'О нас', nav_contact:'Контакты', nav_book:'Бронировать',
+        hero_kicker:'Быстро • Надёжно • Премиум', hero_title:'ALİSHKA 13 — аренда автомобилей премиум-класса',
+        hero_text:'Прозрачные цены, новые модели, поддержка 24/7 и простое онлайн-бронирование. Мы работаем в Азербайджане, России и Турции.',
+        search_btn:'Поиск', feat_1:'Страховка включена', feat_2:'Неограниченный километраж', feat_3:'Поддержка 24/7',
+        about_title:'Кто мы?', about_text:'ALİSHKA 13 — компания по аренде автомобилей премиум-класса с высокими стандартами обслуживания.',
+        contact_title:'Связаться с нами', contact_send:'Отправить'
+      },
+      tr: {
+        nav_cars:'Arabalar', nav_about:'Hakkımızda', nav_contact:'İletişim', nav_book:'Rezervasyon',
+        hero_kicker:'Hızlı • Güvenilir • Premium', hero_title:'ALİSHKA 13 ile yola çıkın — konforlu ve güvenli araç kiralama',
+        hero_text:'Şeffaf fiyatlar, yeni modeller, 7/24 destek ve kolay online rezervasyon. Azerbaycan, Rusya ve Türkiye’de hizmetinizdeyiz.',
+        search_btn:'Ara', feat_1:'Sigorta dahil', feat_2:'Limitsiz kilometre seçeneği', feat_3:'7/24 destek',
+        about_title:'Biz kimiz?', about_text:'ALİSHKA 13 — yüksek hizmet standartlarına sahip premium araç kiralama şirketi.',
+        contact_title:'İletişim', contact_send:'Gönder'
+      }
+    };
+
+    // Example car data (would normally come from a backend API)
+    const cars = [
+      {id:1,name:{az:'Kia Optima',ru:'Kia Optima',tr:'Kia Optima'},type:'economy',pricePerDay:70, seats:5, luggage:3, img:'',desc:'Rahat və iqtisadi sedan.'},
+      {id:2,name:{az:'Hyundai Elantra',ru:'Hyundai Elantra',tr:'Hyundai Elantra'},type:'economy',pricePerDay:65, seats:5, luggage:3, img:'',desc:'Şəhər üçün ideal seçim.'},
+      {id:3,name:{az:'BMW F30 (3 Series)',ru:'BMW F30 (3 Series)',tr:'BMW F30 (3 Serisi)'},type:'lux',pricePerDay:140, seats:5, luggage:3, img:'',desc:'Sport və komfort bir arada.'},
+      {id:4,name:{az:'BMW F10 (5 Series)',ru:'BMW F10 (5 Series)',tr:'BMW F10 (5 Serisi)'},type:'lux',pricePerDay:190, seats:5, luggage:4, img:'',desc:'Biznes səviyyəli premium sedan.'},
+      {id:5,name:{az:'Mercedes-Benz C200',ru:'Mercedes-Benz C200',tr:'Mercedes-Benz C200'},type:'lux',pricePerDay:150, seats:5, luggage:3, img:'',desc:'Rahat və prestijli sürüş.'},
+      {id:6,name:{az:'Mercedes-Benz C300',ru:'Mercedes-Benz C300',tr:'Mercedes-Benz C300'},type:'lux',pricePerDay:170, seats:5, luggage:3, img:'',desc:'Güclü motor, premium komfort.'},
+      {id:7,name:{az:'Toyota Camry (2015–2018)',ru:'Toyota Camry (2015–2018)',tr:'Toyota Camry (2015–2018)'},type:'economy',pricePerDay:90, seats:5, luggage:4, img:'',desc:'Etibarlı və komfortlu sedan.'},
+      {id:8,name:{az:'Range Rover Vogue (2008)',ru:'Range Rover Vogue (2008)',tr:'Range Rover Vogue (2008)'},type:'suv',pricePerDay:250, seats:5, luggage:5, img:'',desc:'Lüks SUV, tam ötürücü sistem.'}
+    ];
+
+    // --- Utilities ---
+    function el(q){return document.querySelector(q)}
+    function t(key){const l = currentLang; return translations[l][key] || key}
+    function setTextElements(){document.querySelectorAll('[data-i18n]').forEach(n=>{const key=n.getAttribute('data-i18n'); n.textContent = translations[currentLang][key] || n.textContent})}
+
+    // --- Language handling ---
+    let currentLang = localStorage.getItem('al_lang') || navigator.language?.slice(0,2) || 'az';
+    function setLang(l){currentLang = l; localStorage.setItem('al_lang',l); document.documentElement.lang = l; setTextElements();}
+    // initialize selects
+    el('#lang').value = currentLang; el('#footerLang').value = currentLang;
+    el('#lang').addEventListener('change', e=> setLang(e.target.value)); el('#footerLang').addEventListener('change', e=> {el('#lang').value = e.target.value; setLang(e.target.value)})
+
+    // set initial texts
+    document.getElementById('year').textContent = new Date().getFullYear();
+    setLang(currentLang);
+
+    // --- Populate cars ---
+    function renderCars(filter){const grid = el('#carsGrid'); grid.innerHTML=''; const list = filter ? cars.filter(c=>c.type===filter) : cars; list.forEach(c=>{
+      const div = document.createElement('div'); div.className='card';
+      div.innerHTML = `
+        <div class="car-img" aria-hidden="true">${c.type.toUpperCase()}</div>
+        <div style="margin-top:8px;font-weight:700">${c.name[currentLang]}</div>
+        <div style="color:var(--muted);font-size:13px">${c.desc}</div>
+        <div class="car-meta">
+          <div style="font-size:14px;color:var(--muted)">${c.seats} seats · ${c.luggage} luggage</div>
+          <div style="font-weight:700">${formatCurrency(c.pricePerDay)}/day</div>
+        </div>
+        <div style="margin-top:10px;display:flex;gap:8px">
+          <button class="primary bookBtn" data-id="${c.id}">Rezervasiya</button>
+          <button class="close detailsBtn" data-id="${c.id}">Ətraflı</button>
+        </div>
+      `;
+      grid.appendChild(div);
+    })}
+    function formatCurrency(n){return new Intl.NumberFormat(currentLang, {style:'currency',currency:'AZN',maximumFractionDigits:0}).format(n)}
+    renderCars();
+
+    // --- Search form handler ---
+    el('#searchForm').addEventListener('submit', e=>{
+      e.preventDefault(); const type = el('#carType').value; renderCars(type);
+    });
+
+    // --- Booking modal & flow ---
+    function openModal(html,title){el('#modalBody').innerHTML=html; el('#modalTitle').textContent=title; el('#modalBackdrop').style.display='flex'; el('#modalBackdrop').setAttribute('aria-hidden','false')}
+    function closeModal(){el('#modalBackdrop').style.display='none'; el('#modalBackdrop').setAttribute('aria-hidden','true')}
+    el('#modalClose').addEventListener('click', closeModal);
+    el('#modalBackdrop').addEventListener('click', e=>{ if(e.target===el('#modalBackdrop')) closeModal(); })
+
+    document.addEventListener('click', e=>{
+      if(e.target.matches('.bookBtn')){
+        const id = +e.target.dataset.id; const car = cars.find(c=>c.id===id);
+        const html = `
+          <form id="bookingForm">
+            <div style="margin-bottom:8px"><strong>${car.name[currentLang]} — ${formatCurrency(car.pricePerDay)}/day</strong></div>
+            <div class="form-row"><input type="text" id="bname" placeholder="Adınız" required></div>
+            <div class="form-row"><input type="tel" id="bphone" placeholder="Telefon" required></div>
+            <div class="form-row"><label class="sr-only">Start</label><input type="date" id="bstart" required></div>
+            <div class="form-row"><label class="sr-only">End</label><input type="date" id="bend" required></div>
+            <div class="form-row"><input type="text" id="promo" placeholder="Promokod (isteğe bağlı)"></div>
+            <div style="display:flex;gap:8px;margin-top:8px"><button class="primary" type="submit">Ödənişə keç</button><button type="button" class="close" id="cancelBooking">Ləğv et</button></div>
+          </form>
+        `;
+        openModal(html, 'Rezervasiya');
+
+        // attach booking form handler
+        setTimeout(()=>{
+          el('#cancelBooking').addEventListener('click', closeModal);
+          el('#bookingForm').addEventListener('submit', e2=>{
+            e2.preventDefault();
+            const data = {
+              carId: car.id, name: el('#bname').value, phone: el('#bphone').value,
+              start: el('#bstart').value, end: el('#bend').value, promo: el('#promo').value
+            };
+            // calculate days
+            const days = calcDays(data.start,data.end); if(days<=0){alert('Sifariş tarixlərini yoxlayın');return}
+            const base = car.pricePerDay * days; let total = base;
+            if(data.promo && data.promo.toUpperCase()==='WELCOME13'){ total = Math.round(total*0.8) }
+            // store to localStorage as a temporary reservation
+            const reservations = JSON.parse(localStorage.getItem('al_res')||'[]'); reservations.push({...data,total,createdAt:new Date().toISOString()}); localStorage.setItem('al_res',JSON.stringify(reservations));
+
+            closeModal();
+            alert('Rezervasiyanız qeydə alındı. Ümumi: '+formatCurrency(total)+". Bizim operatorunuz yaxın zamanda əlaqə saxlayacaq.");
+          })
+        },50)
+      }
+
+      if(e.target.matches('.detailsBtn')){
+        const id = +e.target.dataset.id; const car = cars.find(c=>c.id===id);
+        const html=`<div><strong>${car.name[currentLang]}</strong><p style="color:var(--muted)">${car.desc}</p><ul style="color:var(--muted)"><li>${car.seats} seats</li><li>${car.luggage} luggage</li></ul></div>`;
+        openModal(html,'Ətraflı məlumat');
+      }
+    })
+    function calcDays(s,e){ if(!s||!e) return 0; const d1=new Date(s); const d2=new Date(e); const diff = Math.ceil((d2-d1)/(1000*60*60*24)); return diff }
+
+    // --- Contact form ---
+    el('#contactForm').addEventListener('submit', e=>{ e.preventDefault(); alert('Mesajınız qeydə alındı. Tezliklə cavab verəcəyik.'); e.target.reset(); })
+
+    // --- Cookie consent ---
+    if(localStorage.getItem('al_cookie')==='accepted'){ el('#cookieBox').style.display='none' }
+    el('#acceptCookie').addEventListener('click', ()=>{ localStorage.setItem('al_cookie','accepted'); el('#cookieBox').style.display='none' })
+    el('#declineCookie').addEventListener('click', ()=>{ localStorage.setItem('al_cookie','declined'); el('#cookieBox').style.display='none' })
+
+    // --- Book Now button quick open ---
+    el('#bookNowBtn').addEventListener('click', e=>{ e.preventDefault(); // open a simple quick-book modal
+      const html = `<form id=\"quickBook\"><div class=\"form-row\"><input type=\"text\" id=\"qname\" placeholder=\"Ad\" required></div><div class=\"form-row\"><input type=\"tel\" id=\"qphone\" placeholder=\"Telefon\" required></div><div class=\"form-row\"><select id=\"qcar\">${cars.map(c=>`<option value=\"${c.id}\">${c.name[currentLang]} — ${formatCurrency(c.pricePerDay)}/day</option>`).join('')}</select></div><div style=\"display:flex;gap:8px;margin-top:8px\"><button class=\"primary\" type=\"submit\">Davam et</button><button type=\"button\" class=\"close\" id=\"qbCancel\">Ləğv et</button></div></form>`;
+      openModal(html,'Sürətli Rezervasiya');
+      setTimeout(()=>{ el('#qbCancel').addEventListener('click', closeModal); el('#quickBook').addEventListener('submit', e=>{ e.preventDefault(); alert('Təşəkkürlər! Operator ən qısa zamanda əlaqə saxlayacaq.'); closeModal()}) },50)
+    })
+
+    // --- Accessibility & keyboard handling ---
+    document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ closeModal() } })
+
+    // --- Add any missing features suggestions (commented for implementers) ---
+    /*
+      TODO (recommended for production):
+      - Replace local car data with a backend API (REST/GraphQL) and secure admin panel.
+      - Integrate real payment (Stripe/PayPal) with server-side payment intent creation.
+      - Add user accounts & dashboard for reservation management.
+      - Add real images and CDN delivery.
+      - Add server-side validations and CAPTCHA on forms.
+      - Add multi-currency support and dynamic pricing engine.
+      - Add analytics tracking & GDPR-compliant cookie banner with granular consent.
+    */
+
+  </script></body>
+</html>alishka13-site
